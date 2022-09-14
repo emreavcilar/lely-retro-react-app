@@ -1,0 +1,1 @@
+export const SET_USER_COMPANIES = 'SET_USER_COMPANIES'; 
