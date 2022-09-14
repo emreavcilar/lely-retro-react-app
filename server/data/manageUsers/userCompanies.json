@@ -1,0 +1,16 @@
+{
+  "userCompanies": [
+    {
+      "value": "fe-chapter-team",
+      "text": "Frontend Chapter Team"
+    },
+    {
+      "value": "be-chapter-team",
+      "text": "Backend Chapter Team"
+    },
+    {
+      "value": "qa-chapter-team",
+      "text": "Test Chapter Team"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+.sidebar-container {
+  .list-group{
+    .list-group-item {
+      a{
+        color: #000000;
+        span {
+          
+        }
+
+        &:hover{
+          color: red;
+        }
+      }
+    }
+  }
+
+  .toggle-arrow {
+    cursor: pointer;
+    
+  }
+}
