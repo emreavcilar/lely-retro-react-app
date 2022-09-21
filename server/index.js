@@ -5,8 +5,9 @@ const createError = require('http-errors')
 const PORT = process.env.PORT || 3001;
 const app = express();
 // const path = require('path');
-const userData = require("./data/signIn/user.json");
-const userCompanies = require("./data/manageUsers/userCompanies.json");
+const userData = require('./data/signIn/user.json');
+const userCompanies = require('./data/manageUsers/userCompanies.json');
+const boards = require('./data/home/boards.json');
 
 app.use(express.json());
 app.use(
@@ -52,6 +53,18 @@ app.post("/api/essentials/user/companies", (req, res, next) => {
   }
 
   res.json(userCompanies);
+})
+
+// HOME / DASHBOARD -----------------------------
+app.post("/api/essentials/user/essentials", (req, res, next) => {
+  const { body, session } = req;
+  const { boardId, projectId, userId, username } = body;
+
+  if (!username || !userId) {
+    res.status(400).json({ message: "User Id and username can not be empty or null" })
+  }
+
+  res.json(boards);
 })
 
 // app.get('/products/:id', cors(), function (req, res, next) {
