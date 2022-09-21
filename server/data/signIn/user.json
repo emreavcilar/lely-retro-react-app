@@ -4,6 +4,9 @@
     "name": "John",
     "surname": "Doe",
     "email": "test@test.com",
-    "username": "test@test.com"
+    "username": "test@test.com",
+    "companyId": "61dbfa992e8824001797a541",
+    "projectId": "61fbc10404e9e60017f9fce9",
+    "userId": "62f4eb2a1d42cf60ac48edeb"
   }
 }

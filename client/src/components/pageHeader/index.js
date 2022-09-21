@@ -9,6 +9,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import './index.scss';
 import { signOut } from 'containers/signIn/actions';
+import {
+  useNavigate,
+} from 'react-router-dom';
+import {
+  SIGN_IN
+} from 'config/constants/routePaths';
 
 const PageHeader = (props) => {
   //parameters passed to component
@@ -21,6 +27,10 @@ const PageHeader = (props) => {
   } = props;
   const [selectedVal, setSelectedVal] = useState(null);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const className = ['page-header-container', 'd-flex', 'justify-content-between'];
+  className.push(props.className);
 
   // if selected value is null show first value of data
   useEffect(() => {
@@ -30,14 +40,16 @@ const PageHeader = (props) => {
   }, [data])
 
   const signOutFn = () => {
-    dispatch(signOut());
+    dispatch(signOut(() => {
+      navigate(SIGN_IN)
+    }));
   }
 
   return (
     <>
-      <div className='page-header-container d-flex justify-content-between'>
+      <div className={className.join(' ')}>
         <div className='left-container d-flex'>
-          <h4 className='mr-3'>{title}</h4>
+          <h4 className='me-3'>{title}</h4>
 
           {data &&
             <Dropdown>
@@ -66,7 +78,7 @@ const PageHeader = (props) => {
 
 
         <div className='right-container position-relative'>
-          <div className='user-menu-container '>
+          <div className='user-menu-container cursor-pointer'>
             <div className='d-flex align-items-center'>
 
               <Dropdown className="d-inline mx-2">

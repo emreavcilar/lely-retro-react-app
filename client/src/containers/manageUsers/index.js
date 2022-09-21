@@ -15,7 +15,6 @@ const ManageUsers = () => {
   useEffect(() => {
     // did mount  
     // parameters get from the signinReducer 
-    console.log("did mount")
     dispatch(getUserCompanies(email, username))
     return () => {
       // unmount 

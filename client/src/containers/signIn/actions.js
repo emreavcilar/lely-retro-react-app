@@ -36,15 +36,18 @@ export const signIn = (email, password, callback) => dispatch => {
     })
 }
 
-export const signOut = () => dispatch => {
+export const signOut = (callback) => dispatch => {
   apiServices.post('/signOut')
     .then((res) => {
-      console.log('res', res)
       if (res.status === 200 && res.data?.signOut === true) {
         // clear user in store
         dispatch(setUserData(null));
         localStorage.removeItem('access_token');
         localStorage.removeItem('user_data');
+
+        if (callback) {
+          callback();
+        }
       }
     })
     .catch((err) => {

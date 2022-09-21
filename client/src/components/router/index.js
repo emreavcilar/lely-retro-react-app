@@ -17,7 +17,8 @@ import {
   MANAGE_USERS,
   NOT_FOUND_404,
   TEAM_HEALTH,
-  SETTINGS
+  SETTINGS,
+  BOARD,
 } from 'config/constants/routePaths';
 // import Loader from 'components/loader';
 // import Header from 'components/layout/header';
@@ -32,6 +33,7 @@ import TeamHealth from 'containers/teamHealth';
 import Settings from 'containers/settings';
 import ForgotPassword from 'containers/forgotPassword';
 import NotFound404 from 'containers/errors/notFound';
+import Board from 'containers/board';
 import { setUserData } from 'containers/signIn/actions';
 
 // see more detail : https://reactrouter.com/en/v6.3.0/getting-started/installation
@@ -122,6 +124,12 @@ const Router = () => {
               <Route path={SETTINGS} element={
                 <RequireAuth>
                   <Settings />
+                </RequireAuth>
+              }
+              />
+              <Route path={BOARD} element={
+                <RequireAuth>
+                  <Board />
                 </RequireAuth>
               }
               />
