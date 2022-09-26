@@ -5,6 +5,7 @@ This is a non-profit application that aims to learn and apply new tech-stacks wi
 - [Lely Retro React App](#lely-retro-react-app)
   - [React Settings](#react-settings)
   - [Getting Started with Create React App](#getting-started-with-create-react-app)
+    - [`npm install`](#npm-install)
   - [Available Scripts](#available-scripts)
     - [`npm start:client`](#npm-startclient)
     - [`npm start:server`](#npm-startserver)
@@ -42,6 +43,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### `npm install`
+
+After cloning repository in your local machine, you need to install dependencies and devDependencies from package.json files for each project by running `npm install`. This should be done for both projects.
+
+`cd /client`
+`npm install`
+
+`cd /server`
+`npm install`
 
 ## Available Scripts
 
